@@ -38,3 +38,6 @@
 *.log
 *.pdb
 *.tlog
+*.db
+*.exp
+*.opendb

@@ -2,15 +2,13 @@
 //
 
 #include "stdafx.h"
+#include "FaceDS.h"
+#include "DlibHeader.hpp"
 
-#include <dlib/dnn.h>
-#include <dlib/gui_widgets.h>
-#include <dlib/clustering.h>
-#include <dlib/string.h>
-#include <dlib/image_io.h>
-#include <dlib/image_processing/frontal_face_detector.h>
+anet_type gNet;
+frontal_face_detector gDetector = get_frontal_face_detector();
 
-using namespace dlib;
-using namespace std;
-
-frontal_face_detector detector = get_frontal_face_detector();
+FACE_DS_API void faceDS_init()
+{
+	deserialize("models/dlib_face_recognition_resnet_model_v1.dat") >> (gNet);
+}

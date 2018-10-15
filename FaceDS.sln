@@ -5,6 +5,18 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceDS", "FaceDS\FaceDS.vcxproj", "{4B226785-9EA8-4145-88CD-42AEB6DE6C83}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testFaceDetectorDS", "testFaceDetectorDS\testFaceDetectorDS.vcxproj", "{5936C83E-BB4D-45F8-92D5-09539DCB4536}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B226785-9EA8-4145-88CD-42AEB6DE6C83} = {4B226785-9EA8-4145-88CD-42AEB6DE6C83}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{8E653B87-A252-4FAC-9B59-B53FFEAA7FFB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testFaceExtractorDS", "testFaceExtractorDS\testFaceExtractorDS.vcxproj", "{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B226785-9EA8-4145-88CD-42AEB6DE6C83} = {4B226785-9EA8-4145-88CD-42AEB6DE6C83}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,8 +33,28 @@ Global
 		{4B226785-9EA8-4145-88CD-42AEB6DE6C83}.Release|x64.Build.0 = Release|x64
 		{4B226785-9EA8-4145-88CD-42AEB6DE6C83}.Release|x86.ActiveCfg = Release|Win32
 		{4B226785-9EA8-4145-88CD-42AEB6DE6C83}.Release|x86.Build.0 = Release|Win32
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Debug|x64.ActiveCfg = Debug|x64
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Debug|x64.Build.0 = Debug|x64
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Debug|x86.ActiveCfg = Debug|Win32
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Debug|x86.Build.0 = Debug|Win32
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Release|x64.ActiveCfg = Release|x64
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Release|x64.Build.0 = Release|x64
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Release|x86.ActiveCfg = Release|Win32
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536}.Release|x86.Build.0 = Release|Win32
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Debug|x64.ActiveCfg = Debug|x64
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Debug|x64.Build.0 = Debug|x64
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Debug|x86.ActiveCfg = Debug|Win32
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Debug|x86.Build.0 = Debug|Win32
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Release|x64.ActiveCfg = Release|x64
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Release|x64.Build.0 = Release|x64
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Release|x86.ActiveCfg = Release|Win32
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5936C83E-BB4D-45F8-92D5-09539DCB4536} = {8E653B87-A252-4FAC-9B59-B53FFEAA7FFB}
+		{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C} = {8E653B87-A252-4FAC-9B59-B53FFEAA7FFB}
 	EndGlobalSection
 EndGlobal
