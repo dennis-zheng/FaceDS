@@ -1,6 +1,9 @@
 #include "FaceComparetorDS.h"
 #include "DlibHeader.hpp"
 
+using namespace dlib;
+using namespace std;
+
 FaceComparetorDS::FaceComparetorDS()
 {
 	//shape_predictor *sp_;
@@ -14,47 +17,26 @@ FaceComparetorDS::~FaceComparetorDS()
 {
 }
 
-int FaceComparetorDS::compare(const char* fileName1, const char* fileName2)
+int FaceComparetorDS::compare(const char* feat1, const char* feat2)
 {
-	matrix<rgb_pixel> img1;
-	load_image(img1, fileName1);
-	//pyramid_up(img);
-	std::vector<matrix<rgb_pixel>> faces1;
-	for (auto face : gDetector(img1))
-	{
-		auto shape = (*sp_)(img1, face);
-		matrix<rgb_pixel> face_chip;
-		extract_image_chip(img1, get_face_chip_details(shape, 150, 0.25), face_chip);
-		faces1.push_back(move(face_chip));
-	}
+	matrix<float, 0, 1>* face_descriptors1 = (matrix<float, 0, 1>*)feat1;
+	matrix<float, 0, 1>* face_descriptors2 = (matrix<float, 0, 1>*)feat2;
+	return length(*face_descriptors1 - *face_descriptors2) * 1000;
+}
 
-	if (faces1.size() == 0)
-	{
+int FaceComparetorDS::compare(const char* feat1, const int size1, const char* feat2, const int size2)
+{
+	int size = size1 / 4;
+	if (size != size2 / 4)
 		return -1;
-	}
-	std::vector<matrix<float, 0, 1>> face_descriptors1 = gNet(faces1);
-	
-
-	matrix<rgb_pixel> img2;
-	load_image(img2, fileName2);
-	//pyramid_up(img);
-	std::vector<matrix<rgb_pixel>> faces2;
-	for (auto face : gDetector(img2))
+	float* f1 = (float*)feat1;
+	float* f2 = (float*)feat2;
+	matrix<float, 0, 1> face_descriptors1(size, 1);
+	matrix<float, 0, 1> face_descriptors2(size, 1);
+	for (int i = 0; i < size; i++)
 	{
-		auto shape = (*sp_)(img2, face);
-		matrix<rgb_pixel> face_chip;
-		extract_image_chip(img2, get_face_chip_details(shape, 150, 0.25), face_chip);
-		faces2.push_back(move(face_chip));
+		face_descriptors1(i, 0) = f1[i];
+		face_descriptors2(i, 0) = f2[i];
 	}
-
-	if (faces2.size() == 0)
-	{
-		return -1;
-	}
-	std::vector<matrix<float, 0, 1>> face_descriptors2 = gNet(faces2);
-
-
-	float score = length(face_descriptors1[0] - face_descriptors2[0]);
-	cout << "score" << score << endl;
-	return 0;
+	return compare((char*)&face_descriptors1,(char*)&face_descriptors2);
 }

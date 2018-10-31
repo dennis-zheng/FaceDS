@@ -5,6 +5,9 @@
 #include "FaceDS.h"
 #include "DlibHeader.hpp"
 
+using namespace dlib;
+using namespace std;
+
 anet_type gNet;
 frontal_face_detector gDetector = get_frontal_face_detector();
 

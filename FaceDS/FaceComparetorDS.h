@@ -25,7 +25,8 @@ public:
 	~FaceComparetorDS();
 
 public:
-	int compare(const char* fileName1, const char* fileName2);
+	int compare(const char* feat1, const char* feat2);
+	int compare(const char* feat1, const int size1, const char* feat2, const int size2);
 
 private:
 	dlib::shape_predictor* sp_;

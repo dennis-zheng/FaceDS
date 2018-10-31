@@ -1,0 +1,8 @@
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/CMakeFiles/PACKAGE.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/CMakeFiles/INSTALL.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/CMakeFiles/ALL_BUILD.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/CMakeFiles/ZERO_CHECK.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/dlib/CMakeFiles/PACKAGE.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/dlib/CMakeFiles/dlib.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/dlib/CMakeFiles/INSTALL.dir
+D:/dennis/openSource/DLFace/Dlib/dlib/dlib/dlib/CMakeFiles/ALL_BUILD.dir

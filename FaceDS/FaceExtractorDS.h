@@ -25,8 +25,10 @@ public:
 	~FaceExtractorDS();
 
 public:
-	int extract(const char* fileName, VFaceFeatureInfo& vFaceFeatureInfo, bool isDetect = false);
-	int extract(const char* picBuf, const int size, VFaceFeatureInfo& vFaceFeatureInfo, bool isDetect = false);
+	int extract(const char* img, char* feature, bool isDetect = false);
+	int extract(const char* img, VFaceFeatureInfo& vFaceFeatureInfo, bool isDetect = false);
+	int extractByFile(const char* fileName, VFaceFeatureInfo& vFaceFeatureInfo, bool isDetect = false);
+	int extractByBuf(const char* picBuf, const int size, VFaceFeatureInfo& vFaceFeatureInfo, bool isDetect = false);
 private:	
 	dlib::shape_predictor* sp_;
 };
