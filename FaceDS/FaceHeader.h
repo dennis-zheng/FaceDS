@@ -25,9 +25,14 @@ struct FaceFeatureInfo
 	{
 		memset(this, 0, sizeof(FaceFeatureInfo));
 	}
+	~FaceFeatureInfo()
+	{
+		delete []feat;
+		feat = NULL;
+	}
 };
 
-typedef std::vector<FaceInfo> VFaceInfo;
-typedef std::vector<FaceFeatureInfo> VFaceFeatureInfo;
+typedef std::vector<FaceInfo*> VFaceInfo;
+typedef std::vector<FaceFeatureInfo*> VFaceFeatureInfo;
 
 #endif // _FACE_HEADER_H_

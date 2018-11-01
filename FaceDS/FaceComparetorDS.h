@@ -25,7 +25,10 @@ public:
 	~FaceComparetorDS();
 
 public:
+	//	feat1,feat1: matrix<float, 0, 1>* -> char*
 	int compare(const char* feat1, const char* feat2);
+
+	// feat1,feat1: float* -> char*
 	int compare(const char* feat1, const int size1, const char* feat2, const int size2);
 
 private:

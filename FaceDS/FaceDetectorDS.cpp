@@ -22,11 +22,11 @@ int FaceDetectorDS::detect(const char* fileName, VFaceInfo& vFaceInfo)
 	auto it = dets.begin();
 	while(it != dets.end())
 	{
-		FaceInfo info;
-		info.x = it->left();
-		info.y = it->top();
-		info.width = it->width();
-		info.height = it->height();
+		FaceInfo* info = new FaceInfo;
+		info->x = it->left();
+		info->y = it->top();
+		info->width = it->width();
+		info->height = it->height();
 		vFaceInfo.push_back(info);
 		it++;
 	}
@@ -46,11 +46,11 @@ int FaceDetectorDS::detect(const char* picBuf, const int size, VFaceInfo& vFaceI
 	auto it = dets.begin();
 	while (it != dets.end())
 	{
-		FaceInfo info;
-		info.x = it->left();
-		info.y = it->top();
-		info.width = it->width();
-		info.height = it->height();
+		FaceInfo* info = new FaceInfo;
+		info->x = it->left();
+		info->y = it->top();
+		info->width = it->width();
+		info->height = it->height();
 		vFaceInfo.push_back(info);
 		it++;
 	}

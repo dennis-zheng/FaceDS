@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	auto it = vFaceInfo.begin();
 	while (it != vFaceInfo.end())
 	{
-		cout << it->x << "\t" << it->y << "\t" << it->width << "\t" << it->height << endl;
+		cout << (*it)->x << "\t" << (*it)->y << "\t" << (*it)->width << "\t" << (*it)->height << endl;
 		it++;
 	}
 	cout << vFaceInfo.size() << endl;

@@ -58,14 +58,15 @@ int FaceExtractorDS::extract(const char* img, VFaceFeatureInfo& vFaceFeatureInfo
 	auto it = face_descriptors.begin();
 	while (it != face_descriptors.end())
 	{
-		FaceFeatureInfo info;
+		FaceFeatureInfo* info = new FaceFeatureInfo;
 		int size = (*it).size();
-		info.size = size * 4;
-		info.feat = new char[info.size];
-		float* feat = (float*)info.feat;
+		info->size = size * 4;
+		info->feat = new char[info->size];
+		float* feat = (float*)info->feat;
+		memset(feat, 0, size);
 		for (int i = 0; i < size; i++)
 		{
-			feat[i] = face_descriptors[0](0, i);
+			feat[i] = (*it)(0, i);
 			//cout << feat[i] << "\t";
 		}
 		//cout << endl;
@@ -90,6 +91,13 @@ int FaceExtractorDS::extractByBuf(const char* picBuf, const int size, VFaceFeatu
 	cv::Mat frame = cv::imdecode(cv::Mat(data), 1);
 	matrix<rgb_pixel> img;
 	assign_image(img, cv_image<rgb_pixel>(frame));
+	// 效率有待提升
+	int sizeI = img.size();
+	for (int i = 0; i < sizeI; i++)
+	{
+		rgb_pixel bgr = img(i);
+		rgb_pixel tmp(bgr.blue, bgr.green, bgr.red);
+		img(i) = tmp;
+	}
 	return extract((char*)&img, vFaceFeatureInfo, isDetect);
 }
-

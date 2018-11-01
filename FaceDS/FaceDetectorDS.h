@@ -20,7 +20,10 @@ public:
 	~FaceDetectorDS();
 
 public:
+	// fileName: picture file path
 	int detect(const char* fileName, VFaceInfo& vFaceInfo);
+
+	// picBuf: picture buffer
 	int detect(const char* picBuf, const int size, VFaceInfo& vFaceInfo);
 
 private:
