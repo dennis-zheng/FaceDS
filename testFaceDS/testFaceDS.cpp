@@ -19,6 +19,7 @@ int detectTest(int argc, char* argv[])
 	while (it != vFaceInfo.end())
 	{
 		cout << (*it)->x << "\t" << (*it)->y << "\t" << (*it)->width << "\t" << (*it)->height << endl;
+		delete *it;
 		it++;
 	}
 	cout << vFaceInfo.size() << endl;

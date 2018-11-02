@@ -19,10 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5936C83E-BB4D-45F8-92D5-09539DCB4536}</ProjectGuid>
+    <ProjectGuid>{033D96ED-117D-4EBB-975A-B1EFCFC5AA7C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>testFaceDetectorDS</RootNamespace>
+    <RootNamespace>testFaceExtractorDS</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>testFaceDS</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -156,7 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="testFaceDetectorDS.cpp" />
+    <ClCompile Include="testFaceDS.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
