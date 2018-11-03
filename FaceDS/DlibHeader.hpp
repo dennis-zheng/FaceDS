@@ -6,6 +6,7 @@
 #include <dlib/clustering.h>
 #include <dlib/string.h>
 #include <dlib/image_io.h>
+#include <dlib/opencv/cv_image.h>
 #include <dlib/image_processing/frontal_face_detector.h>
 
 //using namespace dlib;
@@ -40,10 +41,6 @@ using anet_type = dlib::loss_metric<dlib::fc_no_bias<128, dlib::avg_pool_everyth
 	>>>>>>>>>>>>;
 
 // ----------------------------------------------------------------------------------------
-
-std::vector<dlib::matrix<dlib::rgb_pixel>> jitter_image(
-	const dlib::matrix<dlib::rgb_pixel>& img
-);
 
 extern anet_type gNet;
 extern dlib::frontal_face_detector gDetector;
