@@ -44,8 +44,8 @@ int FaceExtractorDS::extract(const char* img, char* feature, bool isDetect/* = f
 	{
 		return -1;
 	}
-
 	std::vector<matrix<float, 0, 1>> face_descriptors = gNet(faces, 16);
+	//std::vector<matrix<float, 0, 1>> face_descriptors = gNet(faces, 16);
 	//auto xx = trans(face_descriptors[0]);
 	featureMat->assign(face_descriptors.begin(), face_descriptors.end());
 	return 0;
